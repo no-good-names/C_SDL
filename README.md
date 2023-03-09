@@ -1,2 +1,2 @@
 # CG
-game made with C with SDL2
+C with SDL2
