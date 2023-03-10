@@ -11,18 +11,15 @@ int main(int argc, char* args[])
 
 	SDL_Surface* screenSurface = NULL;
 
-	if( SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
+	if( SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf( "SDL init error.\nSDL_Error: %s\n", SDL_GetError() );
 	}
-	else
-	{
+	else {
 		window = SDL_CreateWindow("SDL window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN );
 		if(window == NULL) {
 			printf("Window couldn't be created.\nSDL_Error: %s\n", SDL_GetError());
 		}
-		else
-		{
+		else {
 			screenSurface = SDL_GetWindowSurface(window);
 
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
@@ -35,8 +32,8 @@ int main(int argc, char* args[])
             while( quit == false ){
                 while( SDL_PollEvent( &event ) ){
                     if( event.type == SDL_QUIT ) quit = true;
-                }
-            }
+		}
+            		}
 		}
 	}
 
