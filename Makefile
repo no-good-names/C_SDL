@@ -1,11 +1,21 @@
-# Compiler
+# File
+OBJS = main.cpp
+
+# Compiler location
 CC = g++
 
-# file
-OBJS = main.c
+# Change SDL2 path if not in C:\SDL2
+# Include path
+INCLUDE_PATHS = -IC:\SDL2\include\SDL2
 
-# Executable name
-EX_NAME = SDL2
+# Lib path
+LIBRARY_PATHS = -LC:\SDL2\lib
+
+COMPILER_FLAGS = -w -Wl,-subsystem,windows
+
+LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2
+
+OBJ_NAME = SDL
 
 all : $(OBJS)
-	CC $(OBJS) -I${HOME}SDL2\scr\include\SDL2 -L${HOME}\SDL2\scr\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -o $(EX_NAME)
+		$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
