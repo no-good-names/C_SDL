@@ -1,4 +1,8 @@
 # C_SDL
 
-<p align="left">C++ with SDL2 </p>
-<p align="left">SDL2 win 64 bit</p>
+<p align="center">C++ with SDL2 </p>
+<p align="center">SDL2 win 64 bit</p>
+
+<div align="center">
+  <a href="https://github.com/libsdl-org/SDL/releases/">Download SDL2 here<a>
+<div>
