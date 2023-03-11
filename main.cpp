@@ -1,9 +1,8 @@
-//Using SDL and standard IO
+//Using SDL, SDL_image and standard IO
 #include <SDL.h>
 #include <stdio.h>
 #include <SDL_image.h>
 
-//Screen dimension constants
 const int WINDOW_WIDTH = 640;
 const int WINDOW_HEIGHT = 480;
 
