@@ -1,4 +1,5 @@
 // SDL2 C++ convert to C
+// Have to download SDL2 your self!
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL.h>
