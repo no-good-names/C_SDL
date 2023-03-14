@@ -15,7 +15,6 @@ int main( int argc, char* args[] )
     SDL_Surface* winSurface = NULL;
     SDL_Event event;
 
-
     if(SDL_Init(SDL_INIT_VIDEO) < 0) {
         printf("Could not init: %s", SDL_GetError);
         return 1;
