@@ -5,12 +5,12 @@ OBJS = main.c
 CC = g++
 
 # Include path
-INCLUDE_PATHS = -IC:\SDL2\include\SDL2
+INCLUDE_PATHS = -I/workspaces/C_SDL/scr/include/SDL2
 
 # Lib path
-LIBRARY_PATHS = -LC:\SDL2\lib
+LIBRARY_PATHS = -L/workspaces/C_SDL/scr/lib
 
-COMPILER_FLAGS = -w -Wl,-subsystem,windows
+COMPILER_FLAGS = -w
 
 # Linkers flags
 LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2
