@@ -1,4 +1,3 @@
-//Using SDL, SDL_image and standard IO
 #include <stdio.h>
 #include <SDL.h>
 
