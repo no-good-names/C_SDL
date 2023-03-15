@@ -4,5 +4,6 @@
 <p align="center">SDL2 64 bit</p>
 
 <div align="center">
-  <a href="https://github.com/libsdl-org/SDL/releases/">Download SDL2 here<a>
+  <a>Download SDL2</a>
+  <a href="https://github.com/libsdl-org/SDL/releases/"> here<a>
 <div>
