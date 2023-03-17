@@ -7,20 +7,20 @@ CC = g++
 ### Dirs for codespace ###
 
 # Include path
-INCLUDE_PATHS = -I/workspaces/C_SDL/scr/include/SDL2
+INCLUDE_PATHS = -IC:\SDL2\include\SDL2
 
 # Lib path
-LIBRARY_PATHS = -L/workspaces/C_SDL/scr/lib
+LIBRARY_PATHS = -LC:\SDL2\lib
 
 # C:\SDL2\include\SDL2
 # C:\SDL2\lib
 
 COMPILER_FLAGS = -w
 
-# Windows: 
+# Windows:
 # -Wl,-subsystem,windows: for no terminal
 # using terminal for tests
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2
+LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2_image -lSDL2
 
 # linux:
 # LINKER_FLAGS = -lSDL2
