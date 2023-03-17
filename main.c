@@ -36,6 +36,12 @@ int main( int argc, char* args[] )
             if(event.type == SDL_QUIT) {
                 running = FALSE;
             }
+            else if(event.type == SDL_KEYUP) {
+				switch(event.key.keysym.sym) {
+                    case SDLK_1:
+                        printf("hi\n");
+			    }
+            }
         }
         SDL_UpdateWindowSurface(window);
     }
