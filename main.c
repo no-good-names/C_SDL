@@ -38,8 +38,8 @@ int main( int argc, char* args[] )
             }
             else if(event.type == SDL_KEYUP) {
 				switch(event.key.keysym.sym) {
-                    case SDLK_w:
-                        printf("up\n");
+					case SDLK_w:
+						printf("up\n");
 						break;
 					case SDLK_s:
 						printf("down\n");
