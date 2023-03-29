@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <SDL.h>
-#include <SDL_image.h>
 
 #define TRUE 1
 #define FALSE 0
 
-const int WINDOW_WIDTH = 640;
-const int WINDOW_HEIGHT = 480;
+const int WINDOW_WIDTH = 1640;
+const int WINDOW_HEIGHT = 1480;
 
 int main( int argc, char* args[] )
 {
