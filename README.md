@@ -1,7 +1,7 @@
-<h1 align="center">C_SDL</h1>
+<h1 align="left">C_SDL</h1>
 
-<p align="center">C with SDL2 (Changed from C++)</p>
-<p align="center">SDL2 64 bit</p>
+<p align="left">C with SDL2 (Changed from C++)</p>
+<p align="left">SDL2 64 bit</p>
 
 <div align="center">
   <a>Download SDL2</a>

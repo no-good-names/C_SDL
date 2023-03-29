@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include <SDL.h>
+#include <SDL2/SDL.h>
+
+#define elif else if // I like python elif
 
 #define TRUE 1
 #define FALSE 0
@@ -14,16 +16,16 @@ int main( int argc, char* args[] )
     SDL_Surface* winSurface = NULL;
     SDL_Event event;
 
-    if(SDL_Init(SDL_INIT_VIDEO) < 0) {
-        printf("Could not init: %s", SDL_GetError);
-        return 1;
-    } else {
-        window = SDL_CreateWindow("SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+    SDL_Init(SDL_INIT_VIDEO);
 
-        if( window == NULL) {
-            printf("Window couldn't init: %s", SDL_GetError);
-        }
+    window = SDL_CreateWindow("SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
 
+    // for debuging
+    if( window == NULL) {
+        printf("Window couldn't init\n");
+        SDL_Quit();
+    }
+    else {
         winSurface = SDL_GetWindowSurface( window );
         SDL_FillRect( winSurface, NULL, SDL_MapRGB( winSurface->format, 0xFF, 0xFF, 0xFF ) );
         SDL_UpdateWindowSurface( window );
@@ -35,7 +37,7 @@ int main( int argc, char* args[] )
             if(event.type == SDL_QUIT) {
                 running = FALSE;
             }
-            else if(event.type == SDL_KEYUP) {
+            elif(event.type == SDL_KEYUP) {
 				switch(event.key.keysym.sym) {
 					case SDLK_w:
 						printf("up\n");

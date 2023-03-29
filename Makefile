@@ -1,7 +1,7 @@
 all : main
 
 # File name
-SCR = main.c
+OBJS = src/main.c
 
 # Compiler
 CC = g++
@@ -13,9 +13,14 @@ CFLAGS = -w
 LFLAGS = -lSDL2
 
 # Executable name
-SCR_NAME = SDL
+OBJ_NAME = build/SDL
 
 main : $(OBJS)
-		$(CC) $(SCR) $(CFLAGS) $(LFLAGS) -o $(SCR_NAME)
+	mkdir -p build
+	$(CC) $(OBJS) $(CFLAGS) $(LFLAGS) -o $(OBJ_NAME)
+
 clean :
-		rm -f $(EXE)
+	rm -f $(OBJ_NAME)
+
+run :
+	./${OBJ_NAME}
