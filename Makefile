@@ -1,34 +1,21 @@
+all : main
+
 # File name
-OBJS = main.c
+SCR = scr/main.c
 
 # Compiler
 CC = g++
 
-### Dirs for codespace ###
+# Compiler flags
+CFLAGS = -w
 
-# Include path
-INCLUDE_PATHS = -IC:\SDL2\include\SDL2
+# Linker flags
+LFLAGS = -lSDL2
 
-# Lib path
-LIBRARY_PATHS = -LC:\SDL2\lib
+# Executable name
+SCR_NAME = build/SDL
 
-# C:\SDL2\include\SDL2
-# C:\SDL2\lib
-
-COMPILER_FLAGS = -w
-
-# Windows:
-# -Wl,-subsystem,windows: for no terminal
-# using terminal for tests
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2_image -lSDL2
-
-# linux:
-# LINKER_FLAGS = -lSDL2
-
-# Mac: Idk
-
-# Exectuable name
-OBJ_NAME = SDL
-
-all : $(OBJS)
-		$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
+main : $(OBJS)
+		$(CC) $(SCR) $(CFLAGS) $(LFLAGS) -o $(SCR_NAME)
+clean :
+		rm -f $(EXE)
