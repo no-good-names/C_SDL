@@ -1,7 +1,7 @@
 all : main
 
 # File name
-SCR = scr/main.c
+SCR = main.c
 
 # Compiler
 CC = g++
@@ -13,7 +13,7 @@ CFLAGS = -w
 LFLAGS = -lSDL2
 
 # Executable name
-SCR_NAME = build/SDL
+SCR_NAME = SDL
 
 main : $(OBJS)
 		$(CC) $(SCR) $(CFLAGS) $(LFLAGS) -o $(SCR_NAME)
