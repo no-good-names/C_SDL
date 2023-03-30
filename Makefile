@@ -12,7 +12,6 @@ CFLAGS = -w
 # Linker flags
 LFLAGS = -lSDL2
 
-# Executable name
 OBJ_NAME = build/SDL
 
 main : $(OBJS)
@@ -23,4 +22,4 @@ clean :
 	rm -f $(OBJ_NAME)
 
 run :
-	./${OBJ_NAME}
+	./build/SDL
