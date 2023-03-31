@@ -13,11 +13,11 @@ const int WINDOW_HEIGHT = 1480;
 
 void eventHandler (int isRunning) {
     while(SDL_PollEvent(&event) != FALSE) {
+    case SDL_QUIT:
+        isRunning = FALSE;
+        break;
         if(event.type == SDL_KEYDOWN) {
             switch(event.key.keysym.sym) {
-            case SDL_QUIT:
-                isRunning = FALSE;
-                break;
             case SDLK_ESCAPE:
                 isRunning = FALSE;
             }
