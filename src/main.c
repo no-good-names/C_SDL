@@ -20,6 +20,10 @@ void eventHandler (int isRunning) {
             switch(event.key.keysym.sym) {
             case SDLK_ESCAPE:
                 isRunning = FALSE;
+                break;
+            case SDLK_1:
+                printf("Input test: 1\n");
+                break;
             }
         }
     }
