@@ -1,7 +1,7 @@
 all : main
 
 # File name
-OBJS = src/main.c
+OBJS = src/main.cpp
 
 # Compiler
 CC = g++
