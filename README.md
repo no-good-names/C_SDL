@@ -2,7 +2,7 @@
 
 <p align="left">SDL2 with C</p>
 
-<div align="center">
+<div align="left">
   <a>Download SDL2 build</a>
   <a href="https://github.com/libsdl-org/SDL/releases/"> here<a>
   
