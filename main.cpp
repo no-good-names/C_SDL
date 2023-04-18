@@ -103,6 +103,7 @@ int main(int argc, char *argv[]) {
       default:
         break;
       }
+      break;
     }
     // Input handler
     if (keys[0]) {
