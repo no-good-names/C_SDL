@@ -22,11 +22,8 @@ SDL_Renderer *renderer = NULL;
 int main(int argc, char *argv[]) {
   SDL_Init(SDL_INIT_EVERYTHING);
 
-  window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED,
-                            SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH,
-                            WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
-  renderer = SDL_CreateRenderer(
-      window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+  window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+  renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
   SDL_Rect rect = {50, 50, RECT_WIDTH, RECT_HEIGHT};
   int quit = false;
