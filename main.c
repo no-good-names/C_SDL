@@ -1,7 +1,8 @@
 #include <SDL2/SDL.h>
-#include <chrono>
-#include <iostream>
-#include <thread>
+#include <stdio.h>
+
+#define false 0
+#define true 1
 
 // Window values
 const int WINDOW_WIDTH = 480;
@@ -15,8 +16,8 @@ const int RECT_WIDTH = 50;
 const int RECT_HEIGHT = 50;
 const int RECT_SPEED = 5;
 
-SDL_Window *window = nullptr;
-SDL_Renderer *renderer = nullptr;
+SDL_Window *window = NULL;
+SDL_Renderer *renderer = NULL;
 
 int main(int argc, char *argv[]) {
   SDL_Init(SDL_INIT_EVERYTHING);
@@ -28,27 +29,12 @@ int main(int argc, char *argv[]) {
       window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
   SDL_Rect rect = {50, 50, RECT_WIDTH, RECT_HEIGHT};
-
-  int fps = 60;
-  int frameDelay = 1000 / fps;
-
-  Uint32 frameStart;
-  int frameTime;
-  bool quit = false;
-  bool keys[NUM_KEYS] = {false};
+  int quit = false;
+  int keys[NUM_KEYS] = {false};
   SDL_Event event;
 
   // main loop
   while (!quit) {
-
-    // FPS cap : 60
-    frameStart = SDL_GetTicks();
-    frameTime = SDL_GetTicks() - frameStart;
-    frameTime = SDL_GetTicks() - frameStart;
-    if (frameDelay > frameTime) {
-      std::this_thread::sleep_for(
-          std::chrono::milliseconds(frameDelay - frameTime));
-    }
     // Inputs
     while (SDL_PollEvent(&event)) {
       switch (event.type) {

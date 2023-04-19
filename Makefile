@@ -1,7 +1,7 @@
 all : main
 
 # File name
-OBJS = main.cpp
+OBJS = main.c
 
 # Compiler
 CC = g++
@@ -22,4 +22,4 @@ clean :
 	rm -f $(OBJ_NAME)
 
 run :
-	./build/SDL
+	$(OBJ_NAME)
