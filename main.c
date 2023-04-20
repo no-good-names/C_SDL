@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 
 #define false 0
@@ -22,7 +23,7 @@ SDL_Renderer *renderer = NULL;
 int main(int argc, char *argv[]) {
   SDL_Init(SDL_INIT_EVERYTHING);
 
-  window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+  window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
   SDL_Rect rect = {50, 50, RECT_WIDTH, RECT_HEIGHT};
@@ -30,8 +31,15 @@ int main(int argc, char *argv[]) {
   int keys[NUM_KEYS] = {false};
   SDL_Event event;
 
-  // main loop
+  // FPS cap sets
+  int fps = 60;
+  int frameDelay = 1000 / fps;
+  Uint32 frameStart;
+  int frameTime;
+
+  // Game loop
   while (!quit) {
+    frameStart = SDL_GetTicks();
     // Inputs
     while (SDL_PollEvent(&event)) {
       switch (event.type) {
@@ -41,6 +49,10 @@ int main(int argc, char *argv[]) {
 
       case SDL_KEYDOWN:
         switch (event.key.keysym.sym) {
+        case SDLK_ESCAPE:
+          quit = true;
+          break;
+
         case SDLK_UP:
           keys[0] = true;
           break;
@@ -102,11 +114,19 @@ int main(int argc, char *argv[]) {
       rect.x += RECT_SPEED;
     }
     // rendering
+    // Background
     SDL_SetRenderDrawColor(renderer, 15, 15, 15, 255);
     SDL_RenderClear(renderer);
+    // Rect color
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderFillRect(renderer, &rect);
     SDL_RenderPresent(renderer);
+
+    // FPS cap
+    frameTime = SDL_GetTicks() - frameStart;
+    if (frameDelay > frameTime) {
+      SDL_Delay(frameDelay - frameTime);
+    }
   }
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
