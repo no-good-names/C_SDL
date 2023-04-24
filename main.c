@@ -12,8 +12,6 @@ const int WINDOW_HEIGHT = 360;
 const int NUM_KEYS = 4;
 
 // Rect values
-const int RECT_WIDTH = 50;
-const int RECT_HEIGHT = 50;
 const int RECT_SPEED = 5;
 
 SDL_Window *window = NULL;
@@ -112,6 +110,20 @@ int main(int argc, char *argv[]) {
     if (keys[3]) {
       rect.x += RECT_SPEED;
     }
+    // Basic collision
+    if (rect.x >= WINDOW_WIDTH - rect.w) {
+      rect.x = WINDOW_WIDTH - rect.w;
+    }
+    if (rect.x <= 0) {
+      rect.x = 0;
+    }
+    if (rect.y >= WINDOW_HEIGHT - rect.h) {
+      rect.y = WINDOW_HEIGHT - rect.h;
+    }
+    if (rect.y <= 0) {
+      rect.y = 0;
+    }
+
     // rendering
     // Background
     SDL_SetRenderDrawColor(renderer, 15, 15, 15, 255);
