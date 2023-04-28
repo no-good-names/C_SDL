@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
   window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-  SDL_Rect rect = {50, 50, RECT_WIDTH, RECT_HEIGHT};
+  SDL_Rect rect = {50, 50, 50, 50};
   int quit = false;
   int keys[NUM_KEYS] = {false};
   SDL_Event event;
