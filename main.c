@@ -1,5 +1,7 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define false 0
 #define true 1
@@ -7,9 +9,6 @@
 // Window values
 const int WINDOW_WIDTH = 480;
 const int WINDOW_HEIGHT = 360;
-
-// Input cap
-const int NUM_KEYS = 4;
 
 // Rect values
 const int RECT_SPEED = 5;
@@ -25,7 +24,9 @@ int main(int argc, char *argv[]) {
 
   SDL_Rect rect = {50, 50, 50, 50};
   int quit = false;
-  int keys[NUM_KEYS] = {false};
+
+	// Max inputs and input tracker
+  int keys[4] = {false};
   SDL_Event event;
 
   // FPS cap sets
