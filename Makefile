@@ -1,10 +1,10 @@
 all : main
 
 # File name
-OBJS = main.c
+OBJS = src/main.c
 
 # Compiler
-CC = g++
+CC = gcc
 
 # Compiler flags
 CFLAGS = -w

@@ -1,20 +1,33 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#define false 0
-#define true 1
+#include <stdbool.h>
+#include <SDL2/SDL.h>
 
 // Window values
 const int WINDOW_WIDTH = 480;
 const int WINDOW_HEIGHT = 360;
 
+const int WINDOW_WIDTH = 480;
+const int WINDOW_HEIGHT = 360;
+
+static struct {
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    SDL_Texture *texture, *debug;
+    u32 *pixels;
+    bool quit;
+
+    struct {
+        v2 pos;
+        f32 angle, anglecos, anglesin;
+        int sector;
+    } camera;
+
+    bool sleepy;
+} state;
+
 // Rect values
 const int RECT_SPEED = 5;
-
-SDL_Window *window = NULL;
-SDL_Renderer *renderer = NULL;
 
 int main(int argc, char *argv[]) {
   SDL_Init(SDL_INIT_EVERYTHING);
