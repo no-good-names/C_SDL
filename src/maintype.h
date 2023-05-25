@@ -1,5 +1,5 @@
-#ifndef __MAINDEF__
-#define __MAINDEF__
+#ifndef __MAINTYPE__
+#define __MAINTYPE__
 
 #include <stdio.h>
 #include <string.h>
