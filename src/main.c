@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 #include <SDL.h>
-#include "maindef.h"
+#include "maintype.h"
 
 // Window values
 const int WINDOW_WIDTH = 480;
