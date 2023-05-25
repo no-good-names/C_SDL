@@ -24,10 +24,6 @@ typedef ssize_t  isize;
 #define PI_2 (PI / 2.0f)
 #define PI_4 (PI / 4.0f)
 
-#define EYE_Z 1.65f
-#define HFOV DEG2RAD(90.0f)
-#define VFOV 0.5f
-
 #define ZNEAR 0.0001f
 #define ZFAR  128.0f
 
