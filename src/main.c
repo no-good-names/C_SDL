@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <ctype.h>
 #include <SDL.h>
 #include "maintype.h"

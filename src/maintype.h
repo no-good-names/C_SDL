@@ -33,11 +33,4 @@ typedef struct v2i_s { i32 x, y; } v2i;
 #define v2_to_v2i(_v) ({ __typeof__(_v) __v = (_v); (v2i) { __v.x, __v.y }; })
 #define v2i_to_v2(_v) ({ __typeof__(_v) __v = (_v); (v2) { __v.x, __v.y }; })
 
-#ifndef __BYTEBOOL__
-#define __BYTEBOOL__
-
-typedef enum {false, true} boolean;
-
-#endif
-
 #endif
