@@ -44,9 +44,6 @@ int main(int argc, char *argv[]) {
 
   SDL_Rect rect = {50, 50, 50, 50};
   state.quit = false;
-
-	// Max inputs and input tracker
-  int keys[4] = {false};
   SDL_Event event;
 
   // Game loop
