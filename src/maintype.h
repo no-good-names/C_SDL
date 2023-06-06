@@ -2,6 +2,7 @@
 #define __MAINTYPE__
 
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
