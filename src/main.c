@@ -5,9 +5,8 @@
 #include <SDL.h>
 #include "maintype.h"
 
-// Window values
-const int WINDOW_WIDTH = 480;
-const int WINDOW_HEIGHT = 360;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 600;
 
 static struct {
     SDL_Window *window;
@@ -15,15 +14,7 @@ static struct {
     SDL_Texture *texture;
     u32 *pixels;
     bool quit;
-
-    struct {
-        v2 pos;
-        f32 angle, anglecos, anglesin;
-        int sector;
-    } camera;
-
     bool sleepy;
-
 } state;
 
 static struct {
@@ -44,6 +35,10 @@ int main(int argc, char *argv[]) {
 
   SDL_Rect rect = {50, 50, 50, 50};
   state.quit = false;
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
   SDL_Event event;
 
   // Game loop
