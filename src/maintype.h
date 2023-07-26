@@ -1,11 +1,10 @@
+//  Custom typedefs file
+
 #ifndef __MAINTYPE__
 #define __MAINTYPE__
 
 #include <stdio.h>
 #include <stdint.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 typedef float    f32;
 typedef double   f64;
@@ -30,8 +29,10 @@ typedef ssize_t  isize;
 
 typedef struct v2_s { f32 x, y; } v2;
 typedef struct v2i_s { i32 x, y; } v2i;
-
-#define v2_to_v2i(_v) ({ __typeof__(_v) __v = (_v); (v2i) { __v.x, __v.y }; })
-#define v2i_to_v2(_v) ({ __typeof__(_v) __v = (_v); (v2) { __v.x, __v.y }; })
+typedef struct {
+    int x;
+    int y;
+    SDL_Color color;
+} Point;
 
 #endif

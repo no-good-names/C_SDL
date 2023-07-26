@@ -1,23 +1,15 @@
-# File name
-OBJS = src/main.c
-
-# Compiler
 CC = gcc
 
-# Include path
-INCLUDE_PATHS = -IC:\SDL2\include\SDL2
+SRC_DIR= src
+BUILD_DIR= build
+TEST_DIR= test
 
-# Lib path
-LIBRARY_PATHS = -LC:\SDL2\lib
+INCLUDE_PATHS= -IC:\SDL2\x64\include\SDL2
+LIBRARY_PATHS= -LC:\SDL2\x64\lib
+COMPILER_FLAGS= -w
+LINKER_FLAGS= -lmingw32 -lSDL2main -lSDL2
 
-COMPILER_FLAGS = -w
+.PHONY: main
 
-# Linkers flags
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2
-
-# Exectuable name
-OBJ_NAME = sdl
-
-all : $(OBJS)
-		$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
-		.\$(OBJ_NAME)
+main: $(SRC_DIR)\main.c
+		$(CC) $(SRC_DIR)\main.c $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(BUILD_DIR)\main
